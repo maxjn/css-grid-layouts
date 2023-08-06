@@ -1,0 +1,129 @@
+@import "../breakpoints";
+
+.holy-grail {
+  h1 {
+    font-size: clamp(1.5rem, -0.875rem + 8.333vw, 3rem);
+    text-align: center;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: clamp(1.2rem, -1.75rem + 8.333vw, 2.5rem);
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    column-gap: 50px;
+  }
+  &__header {
+    grid-column: 3 span;
+    border-bottom: 1px solid #ddd;
+    padding: 1.5rem 0;
+  }
+  &__footer {
+    grid-column: 3 span;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  &__sidebar {
+    grid-column: 3 span;
+    padding: 1.5rem;
+
+    ul {
+      width: 100%;
+      height: 100%;
+
+      @include sm {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @include md {
+        display: block;
+        margin-left: -25px;
+      }
+    }
+    li + li {
+      margin-top: 1rem;
+
+      @include sm {
+        margin-left: 1rem;
+      }
+
+      @include md {
+        margin-left: initial;
+      }
+    }
+
+    @include md {
+      grid-column: 1 span;
+      padding: 1.5rem 0;
+    }
+    @include lg {
+      grid-column: 1 span;
+    }
+  }
+  &__nav {
+    grid-column: 3 span;
+    padding: 1.5rem;
+    border-bottom: 1px solid #ddd;
+
+    @include lg {
+      grid-column: 1 span;
+      border-bottom: 0;
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    ul {
+      display: flex;
+      padding-left: 1.5rem;
+      flex-wrap: wrap;
+
+      @include lg {
+        display: block;
+        padding-left: 0.5rem;
+      }
+    }
+    li {
+      text-decoration: underline;
+      font-size: small;
+      padding: 0.4rem;
+    }
+  }
+}
+
+.main {
+  grid-column: 3 span;
+
+  padding: 1.5rem;
+  border-bottom: 1px solid #ddd;
+
+  @include md {
+    grid-column: 2 span;
+    border-right: 1px solid #ddd;
+  }
+  @include lg {
+    border-left: 1px solid #ddd;
+    border-bottom: 0;
+    grid-column: 1 span;
+    margin: 0;
+    margin: 1.5rem 0;
+  }
+
+  &__image {
+    width: 80%;
+    aspect-ratio: 3/2;
+    margin: 1.5rem auto;
+  }
+
+  p + p {
+    margin-top: 1.5rem;
+  }
+}
