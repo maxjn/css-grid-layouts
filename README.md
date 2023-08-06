@@ -6,7 +6,7 @@ explore the demo [here](https://maxjn-css-grid-layouts.vercel.app/)
 
 ## Technologies
 
-- JSX, SCSS,
+- JSX, SCSS, BEM
 - ES6
 - Nextjs
 
