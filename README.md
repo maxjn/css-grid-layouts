@@ -30,4 +30,4 @@ npm run dev
 
 ## Screenshots
 
-![Cover](./frontend/public/cover.png)
+![Cover](./public/cover.png)
