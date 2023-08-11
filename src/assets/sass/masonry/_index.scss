@@ -1,0 +1,82 @@
+@import "../breakpoints";
+
+.masonry {
+  &__container {
+    background-color: #f7f7f7;
+    height: fit-content;
+    .header {
+      background-color: #fff;
+      padding: 10px;
+
+      .nav {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+        max-width: 1400px;
+
+        &__link {
+          color: #333;
+        }
+
+        &__logo {
+          text-transform: uppercase;
+          line-height: 1em;
+          font-size: clamp(1.2rem, -1.75rem + 8.333vw, 1.5rem);
+
+          p:first-child {
+            letter-spacing: 2px;
+            font-weight: 700;
+          }
+          p:last-child {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+  &__main {
+    display: grid;
+
+    margin: auto;
+    padding: 20px;
+    @include md {
+      padding: 60px;
+    }
+    max-width: 1400px;
+
+    grid-template-columns: repeat(auto-fit, minmax(min(25rem, 100%), 1fr));
+    grid-auto-rows: 250px;
+    gap: 30px;
+    .masonry-box {
+      background-color: #fff;
+      border-radius: 6px;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      p + p {
+        margin-top: 0.5rem;
+      }
+
+      &__title {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      overflow: hidden;
+      &__image {
+        width: 100%;
+        height: 100%;
+      }
+
+      // &--image {
+      //   padding: 0;
+      // }
+      &--tall {
+        grid-row: 2 span;
+      }
+    }
+  }
+}
